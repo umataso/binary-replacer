@@ -40,19 +40,19 @@ int main()
     }
     after_hex = ss1.str();
 
-    //ファイル名からバイナリファイルで読み込む
+    // バイナリ形式でファイルで読み込む
     std::ifstream ifs(fileName, std::ios::binary);
 
-    //読込サイズを調べる。
+    // 読込サイズを調べる。
     ifs.seekg(0, std::ios::end);
     long long int size = ifs.tellg();
     ifs.seekg(0);
 
-    //読み込んだデータをchar型に出力する
+    // 読み込んだデータをchar型に出力する
     char *data = new char[size];
     ifs.read(data, size);
 
-    //サイズを出力する
+    // サイズを出力する
     std::cout << "size = "<< size <<"\n" ;
     std::string text;
     std::stringstream hex_zero;
